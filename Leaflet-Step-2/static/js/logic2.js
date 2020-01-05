@@ -28,10 +28,10 @@ function getColor(d){
 
     // var color = "";
     if (d < 1) {
-        color = "YELLOW";
+        color = "DARKKHAKI";
     }
     else if (d < 2) {
-        color = "BISQUE";
+        color = "YELLOW";
     }
     else if (d < 3 ) {
         color = "GOLD";
@@ -63,7 +63,8 @@ var latlng = []
        
        earthquakes.push( L.circle([lat,lon], {
             fillOpacity: 0.75,
-            color : getColor(feature.properties.mag ),
+            color : "GREY",
+            weight: 0.5,
             fillColor: getColor(feature.properties.mag ),
             radius: feature.properties.mag  * 50000
         }).bindPopup("<h3>" + feature.properties.place +
@@ -118,7 +119,7 @@ var baseMaps = {
 //  creating map object
 var myMap = L.map("map", {
     center: [
-      21.94, -79.23
+        11.33, -70.90
     ],
     zoom: 2.5 ,
     layers: [satellite,earthquakesLayer,faultlinesLayer]
